@@ -7,8 +7,6 @@ author_github_username: tradesmanhelix
 excerpt: A look back at the top security stories from the week.
 ---
 
-# This Week in Cybersecurity: April 17-23, 2022
-
 Hi everyone! My name is Alex(ander) Smith. You'll see me around the web by the anagram _tradesmanhelix_. I'm a full-stack software engineer and all-around geek who recently joined the Maxwell Engineering team. I love programming in Ruby, tend to take way too much cream in my coffee, and enjoy dabbling in cybersecurity for fun in my spare time.
 
 Going forward, I plan to collect and share security stories and news from the week on the Maxwell Engineering Blog. I hope you find this information useful as you try to stay abreast of developments in the ever-changing security landscape.
