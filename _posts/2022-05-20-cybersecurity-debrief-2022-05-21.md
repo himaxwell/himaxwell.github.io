@@ -34,7 +34,7 @@ One of the issues with the term 0-day is that it sounds really cool, so it's oft
 
 Thus, the importance of the concept of "defense in depth" - attacks can't always be prevented, so they must be monitored for and controls put in place such that their impact is limited. We'll talk more about defense-in-depth next time.
 
-[1] https://www.fireeye.com/current-threats/what-is-a-zero-day-exploit.html  
+[1] [https://www.fireeye.com/current-threats/what-is-a-zero-day-exploit.html](https://www.fireeye.com/current-threats/what-is-a-zero-day-exploit.html)  
 
 ## Sources & Resources
 The following were used or referenced when preparing this debrief.
