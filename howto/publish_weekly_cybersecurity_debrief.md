@@ -19,6 +19,10 @@
     `_posts/2022-06-10-cybersecurity-debrief-2022-06-11.md`.
 
 1. Every day of the week, spend 15-20 minutes updating the post with content.
+    1. NOTE: When writing in markdown, links are _not_ automatically parsed for you.
+        1. Thus, if you want to link to Google.com and have the link be clickable by your readers, you need to do:  
+        `[https://google.com](https://google.com)`
+        1. You can put any text you want in the square brackets and it will be what the user sees. Typical markdown, but it is a bit surprising if you're used to links to straight URLs being automatically parsed for you.
     1. Update the "Major News Stories" section with the week's biggest cybersecurity stories. Some good outlets to keep an eye on:
         1. Listen to the daily "Internet Stormcast" from SANS: [https://isc.sans.edu/podcast.html](https://isc.sans.edu/podcast.html)
         1. Listen to the week's "Security Now" episode: [https://twit.tv/shows/security-now](https://twit.tv/shows/security-now)
