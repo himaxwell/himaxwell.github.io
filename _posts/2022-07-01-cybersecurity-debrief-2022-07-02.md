@@ -17,7 +17,7 @@ excerpt: A look back at the top cybersecurity stories from the week.
 ## Other Software with Critical Patches Available
 * [Jenkins patched a number of critical issues](https://www.jenkins.io/security/advisory/2022-06-22/).
 
-## Learning -- `CVE-2007-3227`: Part 1
+## Learning -- `CVE-2007-3227`
 On June 14, 2007, the San Antonio Spurs edged the Cleveland Cavaliers 83-82 for a 4-0 series sweep to win the NBA Finals. While probably not as widely known, this day also saw the disclosure of the third ever Ruby on Rails CVE: `CVE-2007-3227`.
 
 The NIST disclosure for this CVE reads, "Cross-site scripting (XSS) vulnerability in the to_json (ActiveRecord::Base#to_json) function in Ruby on Rails before edge 9606 allows remote attackers to inject arbitrary web script via the input values." [1] As a quick refresher, "XSS attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user within the output it generates without validating or encoding it." [2]
