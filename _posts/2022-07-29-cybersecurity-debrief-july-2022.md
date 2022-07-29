@@ -4,7 +4,7 @@ title: 'This Month in Cybersecurity: July 2022'
 author_avatar: https://avatars.githubusercontent.com/u/2421172?v=4
 author_name: Alex Smith
 author_github_username: tradesmanhelix
-excerpt: A look back at the July 2022's top cybersecurity stories.
+excerpt: A look back at July 2022's top cybersecurity stories.
 ---
 
 ##  Major News Stories
