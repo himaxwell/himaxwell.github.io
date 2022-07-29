@@ -39,7 +39,6 @@ For about 12 hours on July 26-27, Rostelecom (Russia's largest digital services 
 * [Oracle patched a large number of its products around the 20th](https://www.oracle.com/security-alerts/cpujul2022.html). Among the many issues fixed was a CVE with a perfect 10/10 CVSS score.
 * [Cisco released a number of security updates for its products](https://tools.cisco.com/security/center/publicationListing.x?).
 
-
 ## Deep Dives
 A few interesting deep-dive reads from the month:
 * [Uncovering a macOS App Sandbox escape vulnerability: A deep dive into CVE-2022-26706](https://www.microsoft.com/security/blog/2022/07/13/uncovering-a-macos-app-sandbox-escape-vulnerability-a-deep-dive-into-cve-2022-26706/)
