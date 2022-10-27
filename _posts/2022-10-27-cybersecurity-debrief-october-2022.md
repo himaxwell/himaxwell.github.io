@@ -51,21 +51,19 @@ More helpfully, the [Rails blog post](https://rubyonrails.org/2007/10/5/rails-1-
 
 [Wikipedia](https://en.wikipedia.org/wiki/Session_fixation) gives this simple example of session fixation:
 
-```
-Alice has an account at the bank http://unsafe.example.com/.
-
-Mallory intends to target Alice's money from her bank.
-
-Alice has a reasonable level of trust in Mallory, and will visit links Mallory sends her.
-
-Mallory has determined that http://unsafe.example.com/ accepts any session identifier, accepts session identifiers from query strings and has no security validation. http://unsafe.example.com/ is thus not secure.
-
-Mallory sends Alice an e-mail: "Hey, check this out, there is a cool new account summary feature on our bank, http://unsafe.example.com/?SID=I_WILL_KNOW_THE_SID". Mallory is trying to fixate the SID to I_WILL_KNOW_THE_SID.
-
-Alice is interested and visits http://unsafe.example.com/?SID=I_WILL_KNOW_THE_SID. The usual log-on screen pops up, and Alice logs on.
-
-Mallory visits http://unsafe.example.com/?SID=I_WILL_KNOW_THE_SID and now has unlimited access to Alice's account.
-```
+> Alice has an account at the bank `http://unsafe.example.com/`.
+>
+> Mallory intends to target Alice's money from her bank.
+>
+> Alice has a reasonable level of trust in Mallory, and will visit links Mallory sends her.
+>
+> Mallory has determined that `http://unsafe.example.com/` accepts any session identifier, accepts session identifiers from query strings and has no security validation. `http://unsafe.example.com/` is thus not secure.
+>
+> Mallory sends Alice an e-mail: "Hey, check this out, there is a cool new account summary feature on our bank, `http://unsafe.example.com/?SID=I_WILL_KNOW_THE_SID`". Mallory is trying to fixate the SID [session ID] to `I_WILL_KNOW_THE_SID`.
+>
+> Alice is interested and visits `http://unsafe.example.com/?SID=I_WILL_KNOW_THE_SID`. The usual log-on screen pops up, and Alice logs on.
+>
+> Mallory visits `http://unsafe.example.com/?SID=I_WILL_KNOW_THE_SID` and now has unlimited access to Alice's account.
 
 The above is the simplest form of session fixation attack. Other, more sophisticated versions exist, including ones that exploit server-generated session IDs, but the gist of the issue is that URL-based sessions are a minefield. It's very difficult to do them correctly and better session mechanisms (such as cookies) already exist, so there's no reason to use URL-based sessions.
 
