@@ -6,4 +6,5 @@ _site
 .sass-cache
 node_modules
 package.json
-.idea
+*.sublime-project
+*.sublime-workspace
