@@ -117,8 +117,13 @@ img {
 }
 
 .date {
+  padding: 20px 0;
   font-style: italic;
   color: $gray;
+}
+
+.join {
+  padding: 20px 0;
 }
 
 // Specify the color of the selection
@@ -166,8 +171,8 @@ img {
 
 .author-avatar {
   vertical-align: middle;
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   margin-left: 15px;
 
@@ -239,7 +244,6 @@ nav {
 }
 
 .wrapper-footer {
-  margin-top: 50px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
   background-color: $lightGray;
