@@ -39,11 +39,11 @@ We can think of polymorphism as a "behaves like a" contract, something we saw ea
 
 Let's look at each of these from the perspective of a given class that we'll call ClassA.
 
-Composition is a working relationship, where a class performs a function for our ClassA. The class that performs this function can change over time. This is similar to a workplace, where anyone qualified can be a receptionist and the person performing that function can change over time. All we really care about is the receptionist functionality happening.
+Composition is a working relationship, where a class performs a function for our ClassA. The class that performs this function can change. This is similar to a workplace, where anyone qualified can be a receptionist and the person performing that function can change over time.
 
-Polymorphism is similar, but whereas with composition we get a class to perform a function for us, with polymorphism we ourselves (ClassA) can take on the ability to perform that function. We become the receptionist by asserting that we can do receptionist things and that anyone can treat us like a receptionist.
+Polymorphism is similar, but whereas with composition we get a class to perform a function for us, with polymorphism we ourselves can take on the ability to perform that function. We become the receptionist by asserting that we can do receptionist things and that anyone can treat us like a receptionist.
 
-With inheritance of course, the relationship between classes is much more formal. There is a direct lineage, and while say our parent might be a receptionist no one unrelated to us can fill the parent relationship. With inheritance, we are talking about a relationship, not merely a role or a function.
+With inheritance of course, the relationship between classes is much more formal. There is a direct lineage, and while say our parent might be a receptionist no one unrelated to use can fill the parent relationship. With inheritance, we are talking about a relationship, not merely a role or a function.
 
 The key takeaway here is:
 
