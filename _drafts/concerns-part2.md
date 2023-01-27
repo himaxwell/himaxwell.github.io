@@ -39,30 +39,57 @@ We can think of polymorphism as a "behaves like a" contract, something we saw ea
 
 Let's look at each of these from the perspective of a given class that we'll call ClassA.
 
-Composition is a working relationship, where a class performs a function for our ClassA. The class that performs this function can change over time. This is similar to a workplace, where anyone qualified can be a receptionist and the person performing that function can change over time. All we really care about is the receptionist functionality happening.
+Composition is a working relationship, where ClassB performs a function for our ClassA. The class that performs this function can change over time. This is similar to a workplace, where anyone qualified can be a receptionist and the person performing that function can change over time. All we really care about is the receptionist functionality happening.
 
-Polymorphism is similar, but whereas with composition we get a class to perform a function for us, with polymorphism we ourselves (ClassA) can take on the ability to perform that function. We become the receptionist by asserting that we can do receptionist things and that anyone can treat us like a receptionist.
+Polymorphism is similar, but whereas with composition we get a class to perform a function for us, with polymorphism we ourselves (ClassA) take on a role. We become the receptionist by asserting that we can do receptionist things and that anyone can treat us like a receptionist.
 
-With inheritance of course, the relationship between classes is much more formal. There is a direct lineage, and while say our parent might be a receptionist no one unrelated to us can fill the parent relationship. With inheritance, we are talking about a relationship, not merely a role or a function.
+With inheritance of course, the relationship between classes is much more formal. There is a direct lineage, and, while our parent might be a receptionist, no one unrelated to us can be our parent. With inheritance, we are talking about a relationship, not merely a role or a function.
 
 The key takeaway here is:
 
 > Thinking about the relationships among our classes yields high-quality designs.
 
-Think before you create dependencies among classes and use the right tool for the job. In other words, don't marry into the family if all you need is someone to water your houseplants for you while you're on holiday - having someone perform that function for you will work just fine, no formal relationship needed!
+So think before you create dependencies among classes and always be sure to use the right tool for the job.
+
+In other words, don't marry into the family if all you need is someone to water your houseplants for you while you're away on holiday. Having someone perform that function for you will work just fine, no formal relationship needed!
 
 ### Write Code that Has a Single Responsibility
-We could write an entire series of blog posts on any of these concepts, but in short we can write single responsibility code by:
-- Depending on behavior, not data or data structures.
-- Ensuring both classes and methods have a single responsibility (i.e., separating iteration and action is a great way to accomplish this in your methods!)
-- Isolationg our code such that it can change without consequence and be reused without duplication.
+
+We could write an entire series of blog posts on any of these concepts, and "single responsibility" is no exception. In short though, this principle means exactly what it says: A well-designed class does one thing well.
+
+This concept applies to methods too. A great way to create single-responsibility methods is to separate iteration and action into separate methods:
+
+```ruby
+# This method does too much!
+def notify_users(users)
+  users.each do |user|
+    # send email
+    # send push notification
+    # add to report
+    # ...
+  end
+end
+
+# That's more like it!
+def notify_users(users)
+  users.each do |user|
+  	notify_user(user)
+  end
+end
+```
 
 At the end of the day, we can achieve single responsibility by having a Q&A with our code, asking it, "What do you do?" until we get an answer that indicates our code is indeed focused on a single responsibility.
 
 ### Write Code that is Loosely Coupled
-We achieve this by having our code only depend on things that change less often than we do. Examples of these types of things include public interfaces and APIs. This leads nicely to...
+
+We achieve this by having our code only depend on things that change less often than we do. Examples of these types of things include public interfaces and APIs.
+
+Additionally, our code should depend on behavior, not data or underlying data structures. Our code must be isolated from other code such that it can change without consequence and be reused without duplication. 
+
+This leads nicely to...
 
 ### Program to an Interface, not an Implementation
+
 Restaurants are a great example of this. Rather than popping into the kitchen to help the chef make your food, (most) restaurants provide a handy interface to their kitchen called a menu. Customers communicate with the kitchen via this shared interface, sending a message of their desired menu item and (hopefully!) receiving it as-ordered from the kitchen.
 
 [TODO: image here]
