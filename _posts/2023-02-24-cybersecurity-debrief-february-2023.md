@@ -66,9 +66,9 @@ By instructing Bing Chat to “ignore previous instructions” and write out wha
 
 Sadly, there were some issues with some of the patches, including [Windows Server 2022 not starting up](https://learn.microsoft.com/en-us/windows/release-health/status-windows-server-2022#windows-server-2022-might-not-start-up) - yikes!
 
-#### [Apple Patches Explointed Vulnerability](https://isc.sans.edu/diary/Apple%20Patches%20Exploited%20Vulnerability/29544)
+#### Apple Patches Explointed Vulnerability
 
-Webkit, the rendering engine used by Safari, had a critical vulnerability that was being actively-exploited. The vulnerability was due to type confusion and could be exploited if a victim visited a specially-crafted webpage.
+Webkit, the rendering engine used by Safari, [had a critical vulnerability that was being actively-exploited](https://isc.sans.edu/diary/Apple%20Patches%20Exploited%20Vulnerability/29544). The vulnerability was due to type confusion and could be exploited if a victim visited a specially-crafted webpage.
 
 A kernal bug also existed in iPadOS, iOS, and MacOS that could allow an attacker to execute code with kernel privileges.
 
@@ -83,8 +83,8 @@ Nasty stuff. Good idea to update all of the iDevices under your care!
 * [Update Now: Github Repos for Github Desktop and Atom Compromised Via Stolen Personal Access Token](https://github.blog/2023-01-30-action-needed-for-github-desktop-and-atom-users/)
 
 ## Other Software with Critical Patches Available
-- Adobe: PSA that if you use any Adobe products a large number of patches were recently issued: https://helpx.adobe.com/security/security-bulletin.html
-- Firefox: Several high-severity vulnerabilities patched: https://www.mozilla.org/en-US/security/advisories/mfsa2023-05/
+- Adobe: PSA that if you use any Adobe products a large number of patches were recently issued: [https://helpx.adobe.com/security/security-bulletin.html](https://helpx.adobe.com/security/security-bulletin.html)
+- Firefox: Several high-severity vulnerabilities patched: [https://www.mozilla.org/en-US/security/advisories/mfsa2023-05/](https://www.mozilla.org/en-US/security/advisories/mfsa2023-05/)
 
 ## Deep Dives
 A few interesting deep-dive reads from the month:
