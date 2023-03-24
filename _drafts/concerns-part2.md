@@ -1,15 +1,15 @@
-Welcome back! [Last time](), we left off with the question,
+Welcome back! [Last time](), we discussed the basics of concerns in Ruby. We then took a detour with the goal of understanding, not just what concerns are, but also how to use them well. As part of that detour, we defined good software as, "software that can change inexpensively," which led us to the following question:
 
 > How do we build software in such a way that change is as inexpensive as possible?
 
-We said that one way to do this is via the use of time-tested software design principles, aka. the topic of today's blog post. Please recall that we are taking a detour with the ultimate goal of understanding how to better use concerns, the topic of the previous post in this series.
+We said that one way to do this is via the use of time-tested software design principles, aka. the topic of today's blog post.
 
-Ultimately, we will come full circle, but for now let's consider these software design principles. They tell us to write code that:
+Ultimately, we'll come full circle back to the topic of concerns in Ruby, but for now let's consider these software design principles. They tell us to write code that:
 
-1. Has a single responsibility,
-2. Is loosely coupled,
-3. Relies on public interfaces, and
-4. Makes appropriate use of composition, inheritance, and polymorphism.
+> 1. Has a single responsibility,
+> 2. Is loosely coupled,
+> 3. Relies on public interfaces, and
+> 4. Makes appropriate use of composition, inheritance, and polymorphism.
 
 Let's consider each of these in turn, and we're actually going to start with the last bullet point:
 
@@ -39,19 +39,19 @@ We can think of polymorphism as a "behaves like a" contract, something we saw ea
 
 Let's look at each of these from the perspective of a given class that we'll call `ClassA`.
 
-Composition is a working relationship, where `ClassB` performs a function for our `ClassA`. The class that performs this function can change over time. This is similar to a workplace, where anyone qualified can be a receptionist and the person performing that function can change over time. All we really care about is the receptionist functionality happening.
+Composition is a working relationship, where `ClassB` performs a function for our `ClassA`, but the class that performs this function can change over time. This is similar to a workplace, where anyone qualified can be a receptionist and the person performing that function can change over time. All we really care about is the receptionist functionality happening.
 
-Polymorphism is similar, but whereas with composition we get a class to perform a function for us, with polymorphism we ourselves (`ClassA`) take on a role. We become the receptionist by asserting that we can do receptionist things and that anyone can treat us like a receptionist.
+Polymorphism is similar, but whereas with composition we get a class to perform a function for us, with polymorphism we ourselves (`ClassA`) take on a role. We become the receptionist by asserting that we can do receptionist things and that anyone can treat us like a receptionist. We also feel right at home with others filling receptionist roles, laughing at the same jokes, reading the same industry publications, and griping about receptionist things.
 
-With inheritance, the relationship between classes is much more formal. There is a direct lineage, and, while our parent might be a receptionist, no receptionist unrelated to us can be our parent. With inheritance, we are talking about a relationship, not merely a role or a function.
+With inheritance, the relationship between classes is much more formal. There is a direct lineage, and, while our parent might be a receptionist, no receptionist unrelated to us can be our parent. With inheritance, we are talking about a directly traceable genealogy from child to ancestor, not merely a role or function.
 
-The key takeaway here is:
+The key takeaways here are:
 
-> Thinking about the relationships among our classes yields high-quality designs.
+> 1. Thinking about the relationships among our classes yields high-quality designs.
+>
+> 2. Before you create relationships among classes, always be sure that you're using the right tool for the job.
 
-So think before you create dependencies among classes and always be sure to use the right tool for the job.
-
-Or in other words: Don't marry into the family if all you need is someone to water your houseplants for you while you're away on vacation. Having someone perform that function for you will work just fine, no formal relationship needed!
+Or in other words: Don't marry into a family if all you need is someone to water your houseplants and walk your dog for you while you're away on vacation. Having someone perform that function for you will work just fine, no formal affiliation needed!
 
 ### Write Code that Has a Single Responsibility
 
@@ -84,31 +84,31 @@ At the end of the day, we can achieve single responsibility by having a Q&A with
 
 We achieve this by having our code only depend on things that change less often than we do. Examples of these types of things include public interfaces and APIs.
 
-Additionally, our code should depend on behavior, not data or underlying data structures. 
+Additionally, our code should depend on behavior, not data or underlying data structures. We shouldn't know too much about the internal workings of the code that we interact with, instead keeping things on a more professional, public-interface-only level.
 
-Finally, our code must be isolated such that it can change without consequence and be reused without duplication. 
+Finally, our code must itself be isolated such that it can change without consequence and be reused without duplication. 
 
 This leads nicely to...
 
 ### Program to an Interface, not an Implementation
 
-Restaurants are a great example of this. Rather than popping into the kitchen to help the chef make your food, (most) restaurants provide a handy interface to their kitchen called a _menu_. Customers communicate with the kitchen via this shared interface, sending it a message with their desired menu item and (hopefully!) receiving it as-ordered from the kitchen.
+Restaurants are a great example of this. Rather than popping into the kitchen to help the chef make your food, (most) restaurants provide a handy interface to their kitchen called a _menu_. Customers communicate with the kitchen via this shared interface, sending it messages with their desired menu items and (hopefully!) receiving them as-ordered from the kitchen.
 
 [TODO: image here]
 
-When programming to an interface, we are doing the same thing: Asking for what we want, not telling how to do it.
+When programming to an interface, we are doing the same thing that restaurant goers generally do: Asking for what we want, not telling how to do it.
 
-But this fact highlights the importance of having a well-defined interface since the interface determines what messages can be responded to.
+But this fact highlights the importance of having a well-defined interface since _the interface determines what messages can be responded to_.
 
-For example, the Chinese restaurant most likely does not list "breadsticks" as one of the messages that it knows how to respond to, any more than your local Olive Garden can respond to a request for fortune cookies.
+For example, a Chinese restaurant most likely does not list "breadsticks" as one of the messages that it knows how to respond to, any more than your local Italian restaurant can respond to a request for "fortune cookies."
 
 ### The Fundamental Design Question
 
-Applying this mindset to our code, we can think of classes and methods much like restaurants. In the same way that (generally speaking) restaurants only understand the items listed on their menus, classes only understand a certain set of messages sent to their public interface.
+Applying this mindset to our code, we can think of classes and methods much like restaurants. In the same way that, generally speaking, restaurants only understand the items listed on their menus, classes (or at least well-designed classes) only understand a certain set of messages sent to their public interface.
 
-Interestingly, this thought experiment with restaurants is more than just a fun exercise. In her amazing book _Practical Object-Oriented Design in Ruby_, Sandy Metz writes:
+Interestingly, this thought experiment with restaurants is more than just a fun exercise. In her amazing book [_Practical Object-Oriented Design in Ruby_](https://www.poodr.com/), Sandy Metz writes:
 
-> This transition from class-based design to message-based design is a turning point in your design career. The message-based perspective yields more flexible applications than does the class-based perspective.
+> [The] transition from class-based design to message-based design is a turning point in your design career. The message-based perspective yields more flexible applications than does the class-based perspective.
 >
 > Changing the fundamental design question from, "I know I need this class, what should it do?" to, "I need to send this message, who should respond to it?" is the first step in that direction.
 
@@ -122,7 +122,7 @@ If you think about it, this is actually a pretty common way of thinking:
 > 
 > I could go for a hamburger; which joint should I stop at on my way home from work?
 
-Applying this same logic to the code we write looks something like:
+Applying this same logic to the code that we write looks something like:
 
 > I need to sanitize this data; what class/method should I call?
 > 
@@ -134,19 +134,19 @@ Furthermore, interacting with our code in this way checks all of the "clean codi
 - [x] Promotes loose coupling in an application by focusing on sending and responding to messages vs. underlying implementations, and
 - [x] Encourages sending messages using public interfaces
 
-Making appropriate use of composition, inheritance, and polymorphism is an implementation detail. Recall that earlier we said,
+Making appropriate use of composition, inheritance, and polymorphism in a message-based paradigm is an implementation detail. Recall that earlier we said,
 
 > Thinking about the relationships among our classes yields high-quality designs.
 
 We can frame relationships in terms of the messages passed between classes:
 
-- Inheritance: We can respond to the same set of messages as our parent, add new messages we want to respond to, and customize the responses.
-- Composition: We send a message to composed class asking it to perform a function for us. As long as the composed class can respond to the message we send, we are good!
+- Inheritance: We can respond to the same set of messages as our parent, adding new messages we want to respond to and customizing the responses.
+- Composition: We send a message to the composed class asking it to perform a function for us. As long as the composed class can respond to the message we send, we are good!
 - Polymorphism: A role can respond to a given set of messages. By playing a role, we gain the ability to respond to those messages too.
 
 In reality, we can substitute the word "relationships" in the quote above and end up with an equally true axiom:
 
-> Thinking about the messages our classes can send and respond to yields high-quality designs.
+> Thinking about the _messages_ our classes can send and respond to yields high-quality designs.
 
 ### Driving the Point Home
 
@@ -154,9 +154,11 @@ To help us solidify this mindset, let's borrow a meme, but first some context:
 
 [TODO: video link here]
 
-Classic! Steve can help us out here too, reminding us how best to think about the relationships between our classes:
+Classic! Steve can help us out here too:
 
 [TODO: image here]
+
+So, next time you sit down to write some code, consider chanting, "Messages, messages, messages," as a way to remind yourself of good software design principles.
 
 ### The Story so Far
 

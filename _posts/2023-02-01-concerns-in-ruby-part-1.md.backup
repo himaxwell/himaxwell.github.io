@@ -75,7 +75,7 @@ Furthermore, allow me to clarify the statement that, "the primary goal of good s
 >
 > 2. Change is **unknowable**...so it needs to be made inexpensive, not guessed at.
 
-In regards to point #2 above, it's actually considered a design sin to try to predict and build for change ahead of time since doing so a) easily leads to maintaining unused code added in case of "what if" and b) can easily lead to time and effort wasted building the wrong thing.
+Speaking of point #2 above, it's actually considered a design sin to try to predict and build for change ahead of time since doing so a) easily leads to maintaining largely-unused code added in case of "what if" and b) can easily lead to time and effort wasted building the wrong thing.
 
 So, yes - **change is coming** and we therefore need to **make it as inexpensive as possible**. This is the primary goal of good software design, and it means that ***good software design is one of the most practical things in the world***. It is focused, not on glass houses and castles in the clouds, but on making the real-world experience of software development safer, better, and, ultimately, less expensive.
 

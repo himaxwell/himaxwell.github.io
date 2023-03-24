@@ -1,8 +1,8 @@
 Welcome back! Here's the story so far.
 
-In part one, we introduced concerns in Ruby. We looked at how they work and ended by saying that we wanted to go a bit deeper, understanding not just *what* concerns are but also *how to use them well*.
+In [part one](), we introduced concerns in Ruby. We looked at how they work and ended by saying that we wanted to go a bit deeper, understanding not just *what* concerns are but also *how to use them well*.
 
-To do that, we took a bit of a detour in part two and discussed a number of clean coding principles. We covered _a lot_ of ground in that post, but the big takeaway was:
+To do that, we took a bit of a detour in [part two]() and discussed a number of clean coding principles. We covered _a lot_ of ground in that post, but the big takeaway was:
 
 > Thinking about the messages that our classes can send and respond to yields high-quality (i.e., inexpensively changeable) designs.
 
@@ -84,7 +84,7 @@ Remember earlier when we took a detour? It was to get here, where we can say:
 
 > A ***concern*** allows a ***class*** to play a ***role*** via ***polymorphism***.
 
-When you think about "playing a role," hopefully now, thanks to our detour, you immediately realize that doing so means responding to all of the messages that the role understands. To put it another way:
+When you think about "playing a role," hopefully now, thanks to our detour, you immediately realize that doing so means responding to all of the messages that the role understands:
 
 > A class that includes a concern takes on a role and is now able to respond to all of the messages that the concern understands.
 
