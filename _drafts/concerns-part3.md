@@ -88,7 +88,7 @@ When you think about "playing a role," hopefully now, thanks to our detour, you 
 
 > A class that includes a concern takes on a role and is now able to respond to all of the messages that the concern understands.
 
-In fact, the statement, *"you included a concern and now your class can respond to a new set of messages,"* isn't just a cool observation. Remember that this is polymorphism we're talking about. And polymorphism is a **contract** that your class will behave a certain way.
+In fact, the statement, *"You included a concern and now your class can respond to a new set of messages,"* isn't just a cool observation. Remember that this is polymorphism we're talking about. And polymorphism is a **contract** that your class will behave a certain way.
 
 ### Catching Our Breath
 
@@ -181,7 +181,7 @@ Now, one may well counter, "But doesn't this apply to pretty much everything abo
 
 Take inheritance for example. Misuses of inheritance are much more obvious due to the inherent hierarchical nature of inheritance. Also, inheritance is a much easier concept to understand than polymorphism. Thus, on the continuum of simple vs. complex and easy vs. difficult to understand, concerns/polymorphism fall in the category of "complex and difficult to understand."
 
-So, seriously….
+So, seriously…
 
 > Don’t use concerns!
 

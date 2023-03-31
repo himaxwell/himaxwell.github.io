@@ -84,7 +84,7 @@ Remember earlier when we took a detour? It was to get here, where we can say:
 
 > A ***concern*** allows a ***class*** to play a ***role*** via ***polymorphism***.
 
-When you think about "playing a role," hopefully now, thanks to our detour, you immediately realize that doing so means responding to all of the messages that the role understands. To put it another way:
+When you think about "playing a role," hopefully now, thanks to our detour, you immediately realize that doing so means responding to all of the messages that the role understands:
 
 > A class that includes a concern takes on a role and is now able to respond to all of the messages that the concern understands.
 
@@ -181,7 +181,7 @@ Now, one may well counter, "But doesn't this apply to pretty much everything abo
 
 Take inheritance for example. Misuses of inheritance are much more obvious due to the inherent hierarchical nature of inheritance. Also, inheritance is a much easier concept to understand than polymorphism. Thus, on the continuum of simple vs. complex and easy vs. difficult to understand, concerns/polymorphism fall in the category of "complex and difficult to understand."
 
-So, seriously….
+So, seriously…
 
 > Don’t use concerns!
 
