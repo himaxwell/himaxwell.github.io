@@ -1,4 +1,4 @@
-Hello and welcome back to part four of our "Concerns in Ruby" blog post series. Here's a quick recap of what we've covered so far:
+Hello and welcome back to the final part of our "Concerns in Ruby" blog post series. Here's a quick recap of what we've covered so far:
 
 1. In [part one](), we stated that we want to understand what concerns are and how to use them well with the end goal being to write good code.
 1. We defined "good code" as code that can change easily and inexpensively.
@@ -28,7 +28,7 @@ Sadly, this state of affairs prevents us from borrowing the good and leaving the
 
 The fact that a standard Rails installation doesn't even have an `app/services` folder by default speaks to the fact that service classes are quite often viewed as second-class citizens in Ruby. They are considered too Java-ish, and, while you'll find liberal use of concerns in most Ruby projects and in the Rails codebase itself, most Ruby projects don't consider service classes a vital tool in their arsenal.
 
-But, as we've already seen, there are _a lot_ of issues with concerns, and, perhaps controversially, I would argue that:
+But, as we've already seen, there are _a lot_ of issues with concerns, and, perhaps controversially, I would argue:
 
 > Anything that a concern can do, a service class can also do...but probably **better**.
 
