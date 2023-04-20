@@ -7,9 +7,9 @@ author_github_username: tradesmanhelix
 excerpt: Pitfalls and best practices for using concerns in Ruby.
 ---
 
-Recently, I had the privilege of giving a talk on "Concerns (aka. modules) in Ruby" to the Maxwell development team and afterwards was asked if I could condense my talk into a blog post.
+In October of 2022, I had the privilege of giving a talk on "Concerns (aka. modules) in Ruby" to the Maxwell development team and afterwards was asked if I could condense my talk into a blog post.
 
-Well, I unfortunately failed at the "condense" part as we'll need several posts to cover everything, but I am excited to present the talk to you in written format and hope you find it entertaining if not educational.
+Well, I unfortunately failed at the "condense" part as we'll need several posts to cover everything, but I am excited to present the talk to you in written format and hope that you find it entertaining if not educational.
 
 ***
 
@@ -17,7 +17,7 @@ To begin, let's orient ourselves - what are concerns/modules (hereinafter concer
 
 ![concerns in Rails](../images/posts/concerns-in-ruby-part-1/img_1.jpg)
 
-Broadly-speaking, **concerns are a mechanism for allowing an otherwise-unrelated set of classes to share code**. In Ruby, they are created using the `module` keyword and in Rails apps they can live in multiple locations but conventionally are found in the `app/models/concerns` directory.
+Broadly-speaking, **concerns are a mechanism for allowing an otherwise-unrelated set of classes to share code**. In Ruby, they are created using the `module` keyword and in Rails apps they can live in multiple locations but conventionally are found in directories like `app/models/concerns`, `app/controllers/concerns`, etc.
 
 As an example of one place we might use a concern, say we're working on an app for managing a "family fun park" type of business that has a laser tag arena, party rooms, and bowling lanes, and we want to allow our customers to book or reserve any and all of these. We can accomplish this behavior via a `Bookable` concern that adds scheduling functionality to any class that includes it.
 
@@ -25,7 +25,7 @@ As an example of one place we might use a concern, say we're working on an app f
 
 You'll often see concerns referred to as mix-ins because their functionality gets "added to" or "mixed into" the classes that include them. Also note that classes aren't limited to just one concern - they can include as many as they want!
 
-The code sharing made possible by concerns is DRY ("don't repeat yourself") and solves the problem of single inheritance, since classes, in Ruby at least, can only have one parent class.
+The code sharing made possible by concerns is DRY ("don't repeat yourself") and solves the problem of single inheritance since classes, in Ruby at least, can only have one parent class.
 
 ![concerns summary](../images/posts/concerns-in-ruby-part-1/img_3.jpg)
 
@@ -39,7 +39,7 @@ Now, here's a diagram that depicts how concerns work:
 
 ![concerns diagram](../images/posts/concerns-in-ruby-part-1/img_5.jpg)
 
-Hopefully, as you look at the above, a little red flag is waving around annoyingly in your mind. Hopefully, as you examine these diagrams, you are hit with the fact that in both we are looking at relationships between classes, but the relationship created by inheritance is much more explicit/obvious than the relationship that's created when we use a concern.
+Hopefully, as you look at the above, a little red flag is waving around annoyingly in your mind. Hopefully, as you examine these diagrams, you are hit with the fact that in both we are looking at _relationships_ between classes, but the relationship created by inheritance is much more explicit/obvious than the relationship that's created when we use a concern.
 
 In short:
 
@@ -59,6 +59,8 @@ So for now:
 
 ![save this for later](../images/posts/concerns-in-ruby-part-1/img_7.jpg)
 
+----
+
 Let's take that detour and begin by asking ourselves...
 
 ## _What is the primary goal of good software design?_
@@ -73,7 +75,7 @@ Furthermore, allow me to clarify the statement that, "the primary goal of good s
 
 > 1. Change is **inevitable**...so it must be taken into account.
 >
-> 2. Change is **unknowable**...so it needs to be made inexpensive, not guessed at.
+> 2. Change is **unknowable**...so it needs to be made inexpensive, _not_ guessed at.
 
 In regards to point #2 above, it's actually considered a design sin to try to predict and build for change ahead of time since doing so a) easily leads to maintaining unused code added in case of "what if" and b) can easily lead to time and effort wasted building the wrong thing.
 
