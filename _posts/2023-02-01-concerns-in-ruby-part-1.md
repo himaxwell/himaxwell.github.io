@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 'Concerns in Ruby: Part 1'
+title: 'Concerns in Ruby: Part 1: Concerning Concerns'
 author_avatar: https://avatars.githubusercontent.com/u/2421172?v=4
 author_name: Alex Smith
 author_github_username: tradesmanhelix
@@ -9,7 +9,7 @@ excerpt: Pitfalls and best practices for using concerns in Ruby.
 
 In October of 2022, I had the privilege of giving a talk on "Concerns (aka. modules) in Ruby" to the Maxwell development team and afterwards was asked if I could condense my talk into a blog post.
 
-Well, I unfortunately failed at the "condense" part as we'll need several posts to cover everything, but I am excited to present the talk to you in written format and hope that you find it entertaining if not educational.
+Well, I unfortunately failed at the "condense" part as we'll need about four posts to cover everything, but I am excited to present the talk to you in written format and hope that you find it entertaining if not educational.
 
 ***
 
@@ -25,7 +25,7 @@ As an example of one place we might use a concern, say we're working on an app f
 
 You'll often see concerns referred to as mix-ins because their functionality gets "added to" or "mixed into" the classes that include them. Also note that classes aren't limited to just one concern - they can include as many as they want!
 
-The code sharing made possible by concerns is DRY ("don't repeat yourself") and solves the problem of single inheritance since classes, in Ruby at least, can only have one parent class.
+The code sharing made possible by concerns is DRY ("don't repeat yourself") and resolves the constraint of single inheritance since classes, in Ruby at least, can only have one parent class.
 
 ![concerns summary](../images/posts/concerns-in-ruby-part-1/img_3.jpg)
 
@@ -39,7 +39,7 @@ Now, here's a diagram that depicts how concerns work:
 
 ![concerns diagram](../images/posts/concerns-in-ruby-part-1/img_5.jpg)
 
-Hopefully, as you look at the above, a little red flag is waving around annoyingly in your mind. Hopefully, as you examine these diagrams, you are hit with the fact that in both we are looking at _relationships_ between classes, but the relationship created by inheritance is much more explicit/obvious than the relationship that's created when we use a concern.
+Hopefully, as you look at the above, a little red flag is waving around annoyingly in your mind. As you examine these diagrams, maybe you're hit by the fact that in both we are looking at _relationships_ between classes, but the relationship created by inheritance is much more explicit/obvious than the relationship that's created when we use a concern.
 
 In short:
 
@@ -49,7 +49,7 @@ In short:
 
 And it's at this point that I'm going to take what will probably feel like a (long) detour, but please hang with me. This tangent is necessary because:
 
-> Knowing what something _is_ or what it _does_ does NOT mean that we understand how to use it well!
+> Knowing what something _is_, or what it _does_, does NOT mean that we understand how to use it well!
 
 As Lego Gandalf said:
 
