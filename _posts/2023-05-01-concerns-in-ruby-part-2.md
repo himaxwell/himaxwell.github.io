@@ -1,4 +1,16 @@
-Welcome back! [Last time](), we discussed the basics of concerns in Ruby. We then took a detour with the goal of understanding, not just what concerns are, but also how to use them well. As part of that detour, we defined good software as, "software that can change inexpensively," which led us to the following question:
+---
+layout: post
+title: 'Concerns in Ruby: Part 2: A Short Cut to Much Better Code'
+author_avatar: https://avatars.githubusercontent.com/u/2421172?v=4
+author_name: Alex Smith
+author_github_username: tradesmanhelix
+excerpt: Pitfalls and best practices for using concerns in Ruby.
+---
+
+Welcome back! [Last time]({% link _posts/2023-04-24-concerns-in-ruby-part-1.md %}), we discussed the basics of concerns in Ruby and saw a few examples of how to use them to share code across otherwise-unrelated sets of classes. We then took a detour with the goal of understanding, not just what concerns are, but also how to use them well. As part of that detour, we defined good software as, "software that can change inexpensively." We said that the concept of "inexpensive" encompassed a myriad of factors including time, money, and effort.
+
+
+This led us to the following question:
 
 > How do we build software in such a way that change is as inexpensive as possible?
 
