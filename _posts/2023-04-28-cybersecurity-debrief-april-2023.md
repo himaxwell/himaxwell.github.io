@@ -122,7 +122,7 @@ First off, Mozilla has a nifty tool you might want to check out: The Firefox Mon
 
 > We monitor all known data breaches to find out if your personal information was compromised. Here’s a complete list of all of the breaches that have been reported since 2007.
 
-The free tool is available here: [https://monitor.firefox.com/breaches(https://monitor.firefox.com/breaches)]. You can receive a notification should any email address you own be compromised in a data breach by signing up for the free Firefox Monitor service here: [https://monitor.firefox.com](https://monitor.firefox.com).
+The free tool is available here: [https://monitor.firefox.com/breaches](https://monitor.firefox.com/breaches). You can receive a notification should any email address you own be compromised in a data breach by signing up for the free Firefox Monitor service here: [https://monitor.firefox.com](https://monitor.firefox.com).
 
 Additionally, the OG breach monitoring site is [';--have i been pwned?](https://haveibeenpwned.com). Created and run by Troy Hunt, the free site first launched back in 2013 and alerts users should any of their registered email addresses show up in a data breach.
 
