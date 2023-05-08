@@ -9,7 +9,6 @@ excerpt: Pitfalls and best practices for using concerns in Ruby.
 
 Welcome back! [Last time]({% link _posts/2023-04-24-concerns-in-ruby-part-1.md %}), we discussed the basics of concerns in Ruby and saw a few examples of how to use them to share code across otherwise-unrelated sets of classes. We then took a detour with the goal of understanding, not just what concerns are, but also how to use them well. As part of that detour, we defined good software as, "software that can change inexpensively." We said that the concept of "inexpensive" encompassed a myriad of factors including time, money, and effort.
 
-
 This led us to the following question:
 
 > How do we build software in such a way that change is as inexpensive as possible?
@@ -33,19 +32,19 @@ First, let's review some terminology:
 
 Inheritance can be defined as an "is a" relationship and is useful when we need to relate objects in obvious hierarchies.
 
-[TODO: image here]
-
 #### Composition
 
 Composition can be thought of as a "has a" relationship, and we should reach for this tool when we need the functionality of a class but it doesn't make sense for us to be a relative of that class.
-
-[TODO: image here]
 
 #### Polymorphism
 
 We can think of polymorphism as a "behaves like a" contract, something we saw earlier when discussing concerns and said that they facilitate behavior sharing.
 
-[TODO: image here]
+#### Visualizing Class Relationships
+
+The following provides nice visualization for inheritance, composition, and polymorphism:
+
+![class relationships visualization](../images/posts/concerns-in-ruby-part-2/img_1.png)
 
 #### Use the Right Tool for the Job
 
@@ -98,7 +97,7 @@ We achieve this by having our code only depend on things that change less often 
 
 Additionally, our code should depend on behavior, not data or underlying data structures. We shouldn't know too much about the internal workings of the code that we interact with, instead keeping things on a more professional, public-interface-only level.
 
-Finally, our code must itself be isolated such that it can change without consequence and be reused without duplication. 
+Finally, our code must itself be isolated such that it can change without consequence and be reused without duplication.
 
 This leads nicely to...
 
@@ -106,7 +105,7 @@ This leads nicely to...
 
 Restaurants are a great example of this. Rather than popping into the kitchen to help the chef make your food, (most) restaurants provide a handy interface to their kitchen called a _menu_. Customers communicate with the kitchen via this shared interface, sending it messages with their desired menu items and (hopefully!) receiving them as-ordered from the kitchen.
 
-[TODO: image here]
+![message-based interactions](../images/posts/concerns-in-ruby-part-2/img_2.png)
 
 When programming to an interface, we are doing the same thing that restaurant goers generally do: Asking for what we want, not telling how to do it.
 
@@ -131,13 +130,13 @@ Let me highlight that last bit, just so we don't miss it:
 If you think about it, this is actually a pretty common way of thinking:
 
 > I want pizza; what restaurant should I order from?
-> 
+>
 > I could go for a hamburger; which joint should I stop at on my way home from work?
 
 Applying this same logic to the code that we write looks something like:
 
 > I need to sanitize this data; what class/method should I call?
-> 
+>
 > I need to log these metrics; what service can do that for me?
 
 Furthermore, interacting with our code in this way checks all of the "clean coding" boxes we just discussed. Code that is designed to respond to a given set of messages:
@@ -164,11 +163,11 @@ In reality, we can substitute the word "relationships" in the quote above and en
 
 To help us solidify this mindset, let's borrow a meme, but first some context:
 
-[TODO: video link here]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XxbJw8PrIkc?start=41" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Classic! Steve can help us out here too:
 
-[TODO: image here]
+![concerns in Rails](../images/posts/concerns-in-ruby-part-2/messages.gif)
 
 So, next time you sit down to write some code, consider chanting, "Messages, messages, messages," as a way to remind yourself of good software design principles.
 
