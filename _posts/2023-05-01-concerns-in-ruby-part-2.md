@@ -173,10 +173,10 @@ So, next time you sit down to write some code, consider chanting, "Messages, mes
 
 ### The Story so Far
 
-That was a lot! Let's summarize what we've covered in this series so far and then take a step back and see where we're headed:
+That was a lot! Let's summarize what we've covered in this series up to this point and then take a step back and see where we're headed:
 
 * In Ruby, concerns are a means for reusing code.
-* We want to understand how best to use them, not just know what they are.
+* We want to understand how to best use concerns, not just know what they are.
 * To accomplish this, we zoomed out and discussed some general clean coding principles.
 * In short, these clean coding principles led us to thinking about our code from the perspective of messages: "I need to send this message; who should respond to it?"
 * We said that this mindset naturally lends itself to writing clean code.
@@ -185,6 +185,6 @@ The big takeaway here is:
 
 > Thinking about the messages that our classes can send and respond to yields high-quality (i.e., inexpensively changeable) designs.
 
-In the next post in this series, we're going to circle back to our discussion of concerns in Ruby and apply these lessons to the use of concerns, once again striving to understand, no just what they are, but also how best to use them.
+In the next post in this series, we're going to circle back to our discussion of concerns in Ruby and apply these lessons to the use of concerns, once again striving to understand, not just what they are, but also how best to use them.
 
-We'll pick up here next time.
+We'll pick up there next time!
