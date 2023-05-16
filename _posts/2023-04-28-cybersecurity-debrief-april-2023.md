@@ -97,7 +97,7 @@ The new system replaces Microsoft’s old naming scheme (listed in the above art
 
 ## A Few PSAs...
 - [Google Authenticator now supports Google Account synchronization; E2E encryption forthcoming](https://security.googleblog.com/2023/04/google-authenticator-now-supports.html)
-- [Denver FBI Issues Malware Warning on Public Device Charging](https://www.govtech.com/security/denver-fbi-issues-malware-warning-on-public-device-charging):
+- [Denver FBI Issues Malware Warning on Public Device Charging](https://www.govtech.com/security/denver-fbi-issues-malware-warning-on-public-device-charging)
 
 
 ## Other Software with Critical Patches Available
