@@ -43,7 +43,7 @@ In other, _other_ words:
 
 ### Acting Out
 
-At the end of the day, given `ClassA` and `ClassB`, the only thing that `ClassA` really cares about is behavior: Whether or not `ClassB` responds to the message that `ClassA` wants to send to it.
+Much like the customers at the pizza restaurant, consumers of our code really only care about behavior too: Whether or not our code responds to the messages that they want to send.
 
 This may bring to mind the famous saying:
 
@@ -210,7 +210,7 @@ We here at Maxwell have come up with this handy template we have our developers 
 
 ![concerns agreement](../images/posts/concerns-in-ruby-part-3/img_6.png)
 
-What could possibly go wrong, right?
+What could possibly go wrong indeed.
 
 But perhaps there's a better way. Maybe there exists *something* that will allow us to reap some of the same benefits as concerns without the drawbacks.
 
