@@ -277,5 +277,8 @@ DEPENDENCIES
   github-pages
   webrick (~> 1.7)
 
+RUBY VERSION
+   ruby 3.0.5p211
+
 BUNDLED WITH
-   2.2.28
+   2.4.10

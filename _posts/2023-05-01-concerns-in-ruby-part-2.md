@@ -1,4 +1,15 @@
-Welcome back! [Last time](), we discussed the basics of concerns in Ruby. We then took a detour with the goal of understanding, not just what concerns are, but also how to use them well. As part of that detour, we defined good software as, "software that can change inexpensively," which led us to the following question:
+---
+layout: post
+title: 'Concerns in Ruby: Part 2: A Short Cut to Much Better Code'
+author_avatar: https://avatars.githubusercontent.com/u/2421172?v=4
+author_name: Alex Smith
+author_github_username: tradesmanhelix
+excerpt: Pitfalls and best practices for using concerns in Ruby.
+---
+
+Welcome back! [Last time]({% link _posts/2023-04-24-concerns-in-ruby-part-1.md %}), we discussed the basics of concerns in Ruby and saw a few examples of how to use them to share code across otherwise-unrelated sets of classes. We then took a detour with the goal of understanding, not just what concerns are, but also how to use them well. As part of that detour, we defined good software as, "software that can change inexpensively." We said that the concept of "inexpensive" encompassed a myriad of factors including time, money, and effort.
+
+This led us to the following question:
 
 > How do we build software in such a way that change is as inexpensive as possible?
 
@@ -21,19 +32,19 @@ First, let's review some terminology:
 
 Inheritance can be defined as an "is a" relationship and is useful when we need to relate objects in obvious hierarchies.
 
-[TODO: image here]
-
 #### Composition
 
 Composition can be thought of as a "has a" relationship, and we should reach for this tool when we need the functionality of a class but it doesn't make sense for us to be a relative of that class.
-
-[TODO: image here]
 
 #### Polymorphism
 
 We can think of polymorphism as a "behaves like a" contract, something we saw earlier when discussing concerns and said that they facilitate behavior sharing.
 
-[TODO: image here]
+#### Visualizing Class Relationships
+
+The following provides nice visualization for inheritance, composition, and polymorphism:
+
+![class relationships visualization](../images/posts/concerns-in-ruby-part-2/img_1.png)
 
 #### Use the Right Tool for the Job
 
@@ -57,7 +68,7 @@ Or in other words: Don't marry into a family if all you need is someone to water
 
 We could write an entire series of blog posts on any of these concepts, and "single responsibility" is no exception. In short though, this principle means exactly what it says: A well-designed class does one thing well.
 
-This concept applies to methods too. A great way to create single-responsibility methods is to separate iteration and action into separate methods:
+This concept applies to methods too. A great way to create single-responsibility methods is to divide iteration and action into separate methods:
 
 ```ruby
 # This method does too much!
@@ -86,7 +97,7 @@ We achieve this by having our code only depend on things that change less often 
 
 Additionally, our code should depend on behavior, not data or underlying data structures. We shouldn't know too much about the internal workings of the code that we interact with, instead keeping things on a more professional, public-interface-only level.
 
-Finally, our code must itself be isolated such that it can change without consequence and be reused without duplication. 
+Finally, our code must itself be isolated such that it can change without consequence and be reused without duplication.
 
 This leads nicely to...
 
@@ -94,7 +105,7 @@ This leads nicely to...
 
 Restaurants are a great example of this. Rather than popping into the kitchen to help the chef make your food, (most) restaurants provide a handy interface to their kitchen called a _menu_. Customers communicate with the kitchen via this shared interface, sending it messages with their desired menu items and (hopefully!) receiving them as-ordered from the kitchen.
 
-[TODO: image here]
+![message-based interactions](../images/posts/concerns-in-ruby-part-2/img_2.png)
 
 When programming to an interface, we are doing the same thing that restaurant goers generally do: Asking for what we want, not telling how to do it.
 
@@ -119,13 +130,13 @@ Let me highlight that last bit, just so we don't miss it:
 If you think about it, this is actually a pretty common way of thinking:
 
 > I want pizza; what restaurant should I order from?
-> 
+>
 > I could go for a hamburger; which joint should I stop at on my way home from work?
 
 Applying this same logic to the code that we write looks something like:
 
 > I need to sanitize this data; what class/method should I call?
-> 
+>
 > I need to log these metrics; what service can do that for me?
 
 Furthermore, interacting with our code in this way checks all of the "clean coding" boxes we just discussed. Code that is designed to respond to a given set of messages:
@@ -141,8 +152,8 @@ Making appropriate use of composition, inheritance, and polymorphism in a messag
 We can frame relationships in terms of the messages passed between classes:
 
 - Inheritance: We can respond to the same set of messages as our parent, adding new messages we want to respond to and customizing the responses.
-- Composition: We send a message to the composed class asking it to perform a function for us. As long as the composed class can respond to the message we send, we are good!
-- Polymorphism: A role can respond to a given set of messages. By playing a role, we gain the ability to respond to those messages too.
+- Composition: We send a message to the composed class asking it to perform a function for us. As long as the composed class can respond to the message that we send it, we are good!
+- Polymorphism: A role can respond to a given set of messages. By taking on a role, we gain the ability to respond to those messages too.
 
 In reality, we can substitute the word "relationships" in the quote above and end up with an equally true axiom:
 
@@ -152,20 +163,20 @@ In reality, we can substitute the word "relationships" in the quote above and en
 
 To help us solidify this mindset, let's borrow a meme, but first some context:
 
-[TODO: video link here]
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XxbJw8PrIkc?start=41" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 Classic! Steve can help us out here too:
 
-[TODO: image here]
+![concerns in Rails](../images/posts/concerns-in-ruby-part-2/messages.gif)
 
 So, next time you sit down to write some code, consider chanting, "Messages, messages, messages," as a way to remind yourself of good software design principles.
 
 ### The Story so Far
 
-That was a lot! Let's summarize what we've covered in this series so far and then take a step back and see where we're headed:
+That was a lot! Let's summarize what we've covered in this series up to this point and then take a step back and see where we're headed:
 
 * In Ruby, concerns are a means for reusing code.
-* We want to understand how best to use them, not just know what they are.
+* We want to understand how to best use concerns, not just know what they are.
 * To accomplish this, we zoomed out and discussed some general clean coding principles.
 * In short, these clean coding principles led us to thinking about our code from the perspective of messages: "I need to send this message; who should respond to it?"
 * We said that this mindset naturally lends itself to writing clean code.
@@ -174,6 +185,6 @@ The big takeaway here is:
 
 > Thinking about the messages that our classes can send and respond to yields high-quality (i.e., inexpensively changeable) designs.
 
-In the next post in this series, we're going to circle back to our discussion of concerns in Ruby and apply these lessons to the use of concerns, once again striving to understand, no just what they are, but also how best to use them.
+In the next post in this series, we're going to circle back to our discussion of concerns in Ruby and apply these lessons to the use of concerns, once again striving to understand, not just what they are, but also how best to use them.
 
-We'll pick up here next time.
+We'll pick up there next time!
