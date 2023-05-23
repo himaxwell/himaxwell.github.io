@@ -68,7 +68,7 @@ Or in other words: Don't marry into a family if all you need is someone to water
 
 We could write an entire series of blog posts on any of these concepts, and "single responsibility" is no exception. In short though, this principle means exactly what it says: A well-designed class does one thing well.
 
-This concept applies to methods too. A great way to create single-responsibility methods is to separate iteration and action into separate methods:
+This concept applies to methods too. A great way to create single-responsibility methods is to divide iteration and action into separate methods:
 
 ```ruby
 # This method does too much!
@@ -152,8 +152,8 @@ Making appropriate use of composition, inheritance, and polymorphism in a messag
 We can frame relationships in terms of the messages passed between classes:
 
 - Inheritance: We can respond to the same set of messages as our parent, adding new messages we want to respond to and customizing the responses.
-- Composition: We send a message to the composed class asking it to perform a function for us. As long as the composed class can respond to the message we send, we are good!
-- Polymorphism: A role can respond to a given set of messages. By playing a role, we gain the ability to respond to those messages too.
+- Composition: We send a message to the composed class asking it to perform a function for us. As long as the composed class can respond to the message that we send it, we are good!
+- Polymorphism: A role can respond to a given set of messages. By taking on a role, we gain the ability to respond to those messages too.
 
 In reality, we can substitute the word "relationships" in the quote above and end up with an equally true axiom:
 
