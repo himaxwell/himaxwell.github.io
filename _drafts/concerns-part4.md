@@ -1,10 +1,19 @@
+---
+layout: post
+title: 'Concerns in Ruby: Part 4: Farewell to Cóncerns'
+author_avatar: https://avatars.githubusercontent.com/u/2421172?v=4
+author_name: Alex Smith
+author_github_username: tradesmanhelix
+excerpt: Pitfalls and best practices for using concerns in Ruby.
+---
+
 Hello and welcome back to the final part of our "Concerns in Ruby" blog post series. Here's a quick recap of what we've covered so far:
 
 1. In [part one](), we stated that we want to understand what concerns are and how to use them well with the end goal being to write good code.
 1. We defined "good code" as code that can change easily and inexpensively.
 1. In [part two](), we discussed a number of clean coding principles and learned that message-based designs are easily and inexpensively changeable.
 1. Thus, message-based design became our goal: When creating software, we want to think about our code in terms of:
-    - The messages that get sent and 
+    - The messages that get sent and
     - Who is responsible for responding to them.
 1. In [part three](), we learned that when we include a concern in our class we are taking on a role and thereby enabling our class to respond to all of the messages that the concern's role understands.
 1. We also learned that this is _not_ optional: Concerns enable duck typing in the classes that include them, which means these classes have taken on polymorphic behavior and must now adhere to a "behaves like a" contract.
@@ -125,7 +134,7 @@ In the code that we write, we should prefer the use of service classes to the us
 1. Adhere to common class naming conventions.
     - “Repository” for classes managing object CRUD.
     - “Factory” for classes that create other objects.
-1. Ensure the service class name matches the name of the object it services. 
+1. Ensure the service class name matches the name of the object it services.
     - I.e., don’t have a model called `Person` but manage its CRUD with a service class called `UserRepository`.
 1. Keep service classes single purpose, and don’t be afraid of having a lot of service classes of varying sizes. If you name them clearly, it won't be an issue.
 
